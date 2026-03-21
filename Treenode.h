@@ -1,35 +1,37 @@
-class TreeNode {   
-                                        
-   TreeNode *leftPtr; // pointer to left subtree 
-   int data; // node value                               
-   TreeNode *rightPtr; // pointer to right subtree
+#ifndef TREENODE_H
+#define TREENODE_H
+
+#include <iostream>
+using namespace std;
+
+class TreeNode {
+    TreeNode *leftPtr;
+    int data;
+    TreeNode *rightPtr;
 public:
-        TreeNode(int); 
-        ~TreeNode();
-        void set_left(TreeNode* t);
-        void set_right(TreeNode* t){rightPtr=t;}
-        int get_value(){return data;}
-        TreeNode* move_right(){ return rightPtr; }
-        TreeNode* move_left(){ return leftPtr; }
-    //void search_tree(TreeNode * crn ,int x );
-       
+    TreeNode(int);
+    ~TreeNode();
+    void set_left(TreeNode* t);
+    void set_right(TreeNode* t) { rightPtr = t; }
+    int get_value() { return data; }
+    TreeNode* move_right() { return rightPtr; }
+    TreeNode* move_left()  { return leftPtr;  }
+};
 
-}; // end structure treeNode 
-        
+typedef TreeNode* TreeNodePtr;
 
-typedef TreeNode * TreeNodePtr; 
-// synonym for TreeNode*
-void TreeNode::set_left(TreeNode *t){
-  leftPtr=t;
+void TreeNode::set_left(TreeNode *t) {
+    leftPtr = t;
 }
 
-TreeNode::TreeNode(int x){
-   data =x;
-   leftPtr=NULL;
-   rightPtr=NULL;
+TreeNode::TreeNode(int x) {
+    data = x;
+    leftPtr  = NULL;
+    rightPtr = NULL;
+}
 
+TreeNode::~TreeNode() {
+    cout << "Deleting " << data << endl;
 }
-TreeNode::~TreeNode(){
-  cout<<"Deleting "<< data<<endl;
-  
-}
+
+#endif

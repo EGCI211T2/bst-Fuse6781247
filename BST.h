@@ -71,8 +71,7 @@ void BST::insert_node(int value) {
             } // end while
         }
         ++size;
-        cout << value << " inserted" << endl;
-    }
+cout << value << " inserted" << endl;    }
 }
 
 void BST::print(int option) {
