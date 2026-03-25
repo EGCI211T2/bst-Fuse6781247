@@ -152,7 +152,7 @@ void postOrder(TreeNodePtr treePtr) {
 void printTree(TreeNodePtr treePtr, int l) {
     if (treePtr) {
         printTree(treePtr->move_right(), l + 1);    // Right subtree
-        cout << setw(l * 6) << "" << treePtr->get_value() << endl; // Root
+        cout << setw(l * 2) << "" << treePtr->get_value() << endl; // Root
         printTree(treePtr->move_left(), l + 1);     // Left subtree
     }
 }
